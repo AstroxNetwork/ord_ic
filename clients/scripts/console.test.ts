@@ -8,7 +8,7 @@ import { Principal } from '@dfinity/principal';
 import { Secp256k1KeyIdentity } from '@dfinity/identity-secp256k1';
 import crypto, { BinaryLike } from 'crypto';
 
-describe('ego_example', () => {
+describe('ord_canister', () => {
   let exampleActor: ActorSubclass<exampleService>;
   test('who am i', async () => {
     exampleActor =
@@ -18,8 +18,8 @@ describe('ego_example', () => {
         identity(),
         // use idlFactory from generated file
         exampleIDL,
-        // get canister ID for 'ego_example', `configs/ego_example.json` is generated
-        getCanisterId('ego_example')!,
+        // get canister ID for 'ord_canister', `configs/ord_canister.json` is generated
+        getCanisterId('ord_canister')!,
       );
     const pid = (await exampleActor.whoAmI()).toText();
 
@@ -29,8 +29,8 @@ describe('ego_example', () => {
       id2,
       // use idlFactory from generated file
       exampleIDL,
-      // get canister ID for 'ego_example', `configs/ego_example.json` is generated
-      getCanisterId('ego_example')!,
+      // get canister ID for 'ord_canister', `configs/ord_canister.json` is generated
+      getCanisterId('ord_canister')!,
     );
 
     expect(pid).toBe(identity().getPrincipal().toText());
@@ -45,7 +45,7 @@ test('state test', async () => {
       // use idlFactory from generated file
       egoIDL,
       // get canister ID for 'ego_deployer', `configs/ego_deployer.json` is generated
-      getCanisterId('ego_example')!,
+      getCanisterId('ord_canister')!,
     );
 
   const resutl1 = await actor.ego_canister_list();
@@ -67,7 +67,7 @@ describe('btree test', () => {
         // use idlFactory from generated file
         egoIDL,
         // get canister ID for 'ego_deployer', `configs/ego_deployer.json` is generated
-        getCanisterId('ego_example')!,
+        getCanisterId('ord_canister')!,
       );
 
     await actor.insert_user(6, 'user_6');
