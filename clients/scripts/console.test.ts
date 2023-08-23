@@ -1,7 +1,7 @@
 // Use Jest to test
 
-import { idlFactory as exampleIDL, idlFactory as egoIDL } from '@/idls/ego_example.idl';
-import { _SERVICE as exampleService, _SERVICE as egoService } from '@/idls/ego_example';
+import { idlFactory as exampleIDL, idlFactory as egoIDL } from '@/idls/ord_canister.idl';
+import { _SERVICE as exampleService, _SERVICE as egoService } from '@/idls/ord_canister';
 import { getCanisterId, getActor, identity } from '@ego-js/utils';
 import { ActorSubclass } from '@dfinity/agent';
 import { Principal } from '@dfinity/principal';
